@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_trace_20220921/constants/app_color.dart';
 import 'package:ui_trace_20220921/constants/app_text.dart';
+import 'package:ui_trace_20220921/constants/font_family.dart';
 import 'package:ui_trace_20220921/constants/image_path.dart';
 import 'package:ui_trace_20220921/models/battle.dart';
 import 'package:ui_trace_20220921/ui_components/battle_item.dart';
@@ -141,7 +142,13 @@ class BattlePage extends StatelessWidget {
           children: const [
             SizedBox(width: 32.0),
             Icon(Icons.compare_arrows),
-            Text('レギュラーマッチ'),
+            Text(
+              'レギュラーマッチ',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontFamily: FontFamily.paintball,
+              ),
+            ),
           ],
         ),
         actions: [
@@ -174,6 +181,7 @@ class BattlePage extends StatelessWidget {
                         color: Colors.white,
                         fontSize: 18.0,
                         fontWeight: FontWeight.bold,
+                        fontFamily: FontFamily.paintball,
                       ),
                     ),
                   ),

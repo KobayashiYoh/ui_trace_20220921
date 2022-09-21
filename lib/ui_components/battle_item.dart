@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_trace_20220921/constants/app_color.dart';
 import 'package:ui_trace_20220921/constants/app_text.dart';
+import 'package:ui_trace_20220921/constants/font_family.dart';
 import 'package:ui_trace_20220921/models/battle.dart';
 
 class BattleItem extends StatelessWidget {
@@ -26,8 +27,10 @@ class BattleItem extends StatelessWidget {
             child: Text(
               battle.won ? AppText.win : AppText.lose,
               style: TextStyle(
-                  color: battle.won ? AppColor.accent : AppColor.loseForeground,
-                  fontWeight: FontWeight.bold),
+                color: battle.won ? AppColor.accent : AppColor.loseForeground,
+                fontWeight: FontWeight.bold,
+                fontFamily: FontFamily.paintball,
+              ),
             ),
           ),
           Container(
@@ -60,6 +63,7 @@ class BattleItem extends StatelessWidget {
                   color: battle.won ? Colors.white : AppColor.loseForeground,
                   fontWeight: FontWeight.bold,
                   fontSize: 20.0,
+                  fontFamily: FontFamily.paintball,
                 ),
               ),
             ],
