@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_trace_20220921/views/bottom_navigation_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Scaffold(),
+      home: const BottomNavigationView(),
     );
   }
 }
