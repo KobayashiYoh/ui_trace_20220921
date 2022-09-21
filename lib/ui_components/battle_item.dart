@@ -22,17 +22,17 @@ class BattleItem extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            width: 64.0,
+            width: 56.0,
             child: Text(
               battle.won ? AppText.win : AppText.lose,
               style: TextStyle(
-                color: battle.won ? AppColor.accent : AppColor.loseForeground,
-              ),
+                  color: battle.won ? AppColor.accent : AppColor.loseForeground,
+                  fontWeight: FontWeight.bold),
             ),
           ),
           Container(
-            width: 36.0,
-            height: 36.0,
+            width: 40.0,
+            height: 40.0,
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: AssetImage(
@@ -43,6 +43,7 @@ class BattleItem extends StatelessWidget {
               shape: BoxShape.circle,
             ),
           ),
+          const SizedBox(width: 4.0),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -50,12 +51,15 @@ class BattleItem extends StatelessWidget {
                 battle.stage,
                 style: TextStyle(
                   color: battle.won ? Colors.white : AppColor.loseForeground,
+                  fontSize: 12.0,
                 ),
               ),
               Text(
                 '${battle.point}P',
                 style: TextStyle(
                   color: battle.won ? Colors.white : AppColor.loseForeground,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20.0,
                 ),
               ),
             ],
