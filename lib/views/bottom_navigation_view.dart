@@ -10,10 +10,10 @@ class BottomNavigationView extends StatefulWidget {
 
 class _BottomNavigationViewState extends State<BottomNavigationView> {
   final List<Widget> _widgetOptions = <Widget>[
-    Container(),
-    Container(),
     const BattlePage(),
-    Container(),
+    const BattlePage(),
+    const BattlePage(),
+    const BattlePage(),
   ];
 
   int _selectedIndex = 0;

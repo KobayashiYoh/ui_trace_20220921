@@ -5,6 +5,28 @@ class BattlePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            SizedBox(width: 32.0),
+            Icon(Icons.compare_arrows),
+            Text('レギュラーマッチ'),
+          ],
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {},
+            child: const Text(
+              'おわる',
+              style: TextStyle(color: Colors.grey),
+            ),
+          ),
+        ],
+        centerTitle: true,
+        backgroundColor: Colors.black,
+      ),
+    );
   }
 }
