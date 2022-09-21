@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_trace_20220921/constants/app_color.dart';
 import 'package:ui_trace_20220921/constants/app_text.dart';
 import 'package:ui_trace_20220921/constants/image_path.dart';
 import 'package:ui_trace_20220921/models/battle.dart';
@@ -133,7 +134,7 @@ class BattlePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black54,
+      backgroundColor: AppColor.background,
       appBar: AppBar(
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -155,10 +156,44 @@ class BattlePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.black,
       ),
-      body: ListView.builder(
-        itemCount: battles.length,
-        itemBuilder: (BuildContext context, int index) =>
-            BattleItem(battle: battles[index]),
+      body: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: ListView.builder(
+          itemCount: battles.length,
+          itemBuilder: (BuildContext context, int index) {
+            if (index == 0) {
+              return Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.only(left: 4.0, top: 16.0),
+                    alignment: Alignment.topLeft,
+                    color: AppColor.background,
+                    child: const Text(
+                      '2022/9/19',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 8.0),
+                  Container(
+                    height: 8.0,
+                    decoration: const BoxDecoration(
+                      color: AppColor.itemBackground,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(8.0),
+                        topRight: Radius.circular(8.0),
+                      ),
+                    ),
+                  ),
+                ],
+              );
+            }
+            return BattleItem(battle: battles[index - 1]);
+          },
+        ),
       ),
     );
   }

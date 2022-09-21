@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_trace_20220921/constants/app_color.dart';
 import 'package:ui_trace_20220921/constants/app_text.dart';
 import 'package:ui_trace_20220921/models/battle.dart';
 
@@ -10,11 +11,24 @@ class BattleItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 24.0),
+      decoration: const BoxDecoration(
+        color: AppColor.itemBackground,
+        border: Border(
+          bottom: BorderSide(
+            color: AppColor.background,
+          ),
+        ),
+      ),
       child: Row(
         children: [
           SizedBox(
             width: 64.0,
-            child: Text(battle.won ? AppText.win : AppText.lose),
+            child: Text(
+              battle.won ? AppText.win : AppText.lose,
+              style: TextStyle(
+                color: battle.won ? AppColor.accent : AppColor.loseForeground,
+              ),
+            ),
           ),
           Container(
             width: 36.0,
@@ -32,8 +46,18 @@ class BattleItem extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(battle.stage),
-              Text('${battle.point}P'),
+              Text(
+                battle.stage,
+                style: TextStyle(
+                  color: battle.won ? Colors.white : AppColor.loseForeground,
+                ),
+              ),
+              Text(
+                '${battle.point}P',
+                style: TextStyle(
+                  color: battle.won ? Colors.white : AppColor.loseForeground,
+                ),
+              ),
             ],
           ),
         ],
